@@ -16,6 +16,10 @@ function handleClick(userfield){
     let userField = document.querySelector("#guess")
     let elem = document.querySelector("#message")
     let elemento = document.querySelector("#messageTwo")
+    let el = document.querySelector("#hero")
+    let ele = document.querySelector("#guessBtn")
+
+    
 
     number = (userField.value).trim() 
 
@@ -27,7 +31,7 @@ function handleClick(userfield){
     number = parseInt(number)
 
     if (attempts >= maxAttempts) {
-        elem.innerHTML = `Tentativi esauriti ${random}!`
+        elem.innerHTML = `Tentativi esauriti! Il numero era <strong>${random}</strong>!`
         restart()
         return
     }
@@ -52,10 +56,24 @@ function handleClick(userfield){
         return
     }
 
+    
     attempts++
 
-    
+    if(attempts <= 4){
+        el.classList.remove("greenBg")
+        el.classList.add("yellowBg")
 
+        ele.classList.remove("greenBtn")
+        ele.classList.add("yellowBtn")
+
+    } else {
+        el.classList.remove("yellowBg")
+        el.classList.add("redBg")
+
+        ele.classList.remove("yellowBtn")
+        ele.classList.add("redBtn")
+    }
+     
 }
 
 function restart() {
@@ -63,6 +81,8 @@ function restart() {
             attempts = 1
             random = generateRandomInteger()
             elemento.innerHTML = `Riavvio gioco...`
+
+            
 }
 
 btn.addEventListener("click", handleClick)

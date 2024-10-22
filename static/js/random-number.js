@@ -14,7 +14,8 @@ function generateRandomInteger(min = 1, max = 100) {
 function handleClick(userfield){
     let number // defaults to null
     let userField = document.querySelector("#guess")
-    let indovinato = true
+    let elem = document.querySelector("#message")
+    let elemento = document.querySelector("#messageTwo")
 
     number = (userField.value).trim() 
 
@@ -26,37 +27,42 @@ function handleClick(userfield){
     number = parseInt(number)
 
     if (attempts >= maxAttempts) {
-        console.log("Tentativi esauriti")
+        elem.innerHTML = `Tentativi esauriti ${random}!`
         restart()
         return
     }
 
-    console.log("Tentativo numero " + attempts)
+    //elemento.innerHTML = `Tentativi numero <strong>${attempts}</strong>!!`
 
     if(number < random){
-        console.log("Troppo Piccolo!")
+        elemento.innerHTML = `Troppo basso, prova un numero più alto di <strong>${number}</strong>!`
+        elem.innerHTML = `Tentativi numero <strong>${attempts}</strong>!`
+
     }
   
     if(number > random){
-        console.log("Troppo Grande!")
+        elemento.innerHTML = `Troppo alto, prova un numero più basso di <strong>${number}</strong>!`
+        elem.innerHTML = `Tentativi numero <strong>${attempts}</strong>!`
+
     }
 
     if(number === random){
-        console.log("Hai vinto! Il numero era: " + random)
-        console.log("Riavvo gioco...")
+        elem.innerHTML = `Hai vinto! Il numero è <strong>${random}</strong>!`
         restart()
         return
     }
 
     attempts++
 
+    
 
 }
 
 function restart() {
             // generate another random number and display it subsequently
+            attempts = 1
             random = generateRandomInteger()
-            console.log("(" + random + ")")
+            elemento.innerHTML = `Riavvio gioco...`
 }
 
 btn.addEventListener("click", handleClick)

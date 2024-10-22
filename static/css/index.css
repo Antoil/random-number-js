@@ -1,14 +1,50 @@
 #guess{
-    width: 300px;
-    height: 25px;
-    font-size: 20px;
-    background-color: blue;
+    width: 360px;
+    height: 60px;
+    font-size: 25px;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 5px 6px;
+}
+#guessBtn{
+    width: 360px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(4, 78, 4);
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 5px 6px black;
+    margin-top: 20px;
+}
+#guessBtn[value]{
+    color:white; 
+    font-size: 25px;
+}
+.guessNum{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+#message{
+    color: white
+}
+#messageTwo{
+    color: white
+
 }
 header h1 {
-    font-size: 55px;
+    color: white;
+    font-size: 40px;
     font-weight: bold;
-    color: blue;
+    padding-top: 70px;
+    padding-bottom: 40px;
 }
 .rules{
-    font-size: 30px
+    font-size: 20px;
+    color: whitesmoke
+}
+
+body{
+    background-color: rgb(94, 94, 94);
 }

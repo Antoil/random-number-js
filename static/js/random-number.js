@@ -78,11 +78,11 @@ function handleClick(userfield){
 
 function restart() {
             // generate another random number and display it subsequently
+            
             attempts = 1
             random = generateRandomInteger()
             elemento.innerHTML = `Riavvio gioco...`
 
-            
 }
 
 btn.addEventListener("click", handleClick)
